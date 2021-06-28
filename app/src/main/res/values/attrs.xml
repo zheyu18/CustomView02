@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HealthProgressView">
+        <!--进度条大小-->
+        <attr name="progress_size" format="dimension"/>
+        <!--进度条渐变色开始值-->
+        <attr name="progress_current_start_color" format="color"/>
+        <!--进度条渐变色结束值-->
+        <attr name="progress_current_end_color" format="color"/>
+        <!--进度条背景色-->
+        <attr name="progress_total_color" format="color"/>
+        <!--进度时间-->
+        <attr name="progress_duration_time" format="integer"/>
+    </declare-styleable>
+</resources>
