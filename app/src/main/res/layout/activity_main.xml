@@ -36,7 +36,7 @@
                 android:layout_weight="3"
                 app:progress_current_end_color="@color/col_green"
                 app:progress_current_start_color="@color/col_light_green"
-                app:progress_duration_time="1500"
+                app:progress_duration_time="3000"
                 app:progress_size="6dp"
                 app:progress_total_color="@color/col_grey" />
 

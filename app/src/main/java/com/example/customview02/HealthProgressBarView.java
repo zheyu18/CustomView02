@@ -112,20 +112,21 @@ public class HealthProgressBarView extends View {
         if (mCurrentProgress == 0) return;
         float rate = (getWidth() * (mCurrentProgress / mTotalSize)) - mProgressMargin;
         canvas.drawLine(mProgressMargin, mProgressMargin, rate, mProgressMargin, mCurrentPaint);
-        invalidate();
     }
 
-    public synchronized void setHealthProgressBar(float progressRatio, float totalSize) {
+    public void setHealthProgressBar(float progressRatio, float totalSize) {
         this.mTotalSize = totalSize;
         mAnimator = ObjectAnimator.ofFloat(0, progressRatio);
         mAnimator.setDuration(mDurationTime);
         mAnimator.setInterpolator(new DecelerateInterpolator());
         mAnimator.addUpdateListener(animation -> {
             mCurrentProgress = (float) animation.getAnimatedValue();
+            invalidate();
             if (mListener != null) {
                 mListener.currentProgress(Math.round((mCurrentProgress / totalSize) * 100));
             }
         });
+
     }
 
     public interface HealthProgressListener {
